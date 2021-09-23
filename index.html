@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="balloon.png" type="image/x-icon">
+    <title>Pop the Balloon Game</title>
+</head>
+<body>
+    <div class="backgroundAnimations">
+        
+    </div>
+    <div class="container">
+        <div class="loader">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        
+        <div class="inputForm" style="display: none;">
+            <h2 class="formHeding">Login</h2>
+            <div class="errMsg">&nbsp;</div>
+            <div class="loginForm formDiv">
+                <input type="email" class="email" placeholder="Email address" spellcheck="false" >
+                <input type="password" class="password" placeholder="Password" spellcheck="false" >
+                <div class="btn loginBtn" onclick="login()">Login</div>
+                <div class="acntTxt" onclick="showRegForm()">Don't have an account</div>
+            </div>
+            <div class="regForm formDiv" style="display: none;">
+                <!-- <h2>Registor</h2> -->
+                <input type="text" class="name" placeholder="Your name" spellcheck="false" >
+                <input type="email" class="regEmail" placeholder="Email address" spellcheck="false" >
+                <input type="password" class="regPass" placeholder="Password" spellcheck="false" >
+                <div class="btn signupBtn" onclick="signup()">Signup</div>
+                <div class="acntTxt" onclick="showLoginForm()">Already have an account</div>
+            </div>
+        </div>
+
+        <div class="mnPage" style="display: none;">
+            <div class="gameContainer" style="overflow: hidden;">
+                <div class="balloonsInfo" style="display: none;">
+                    <div class="backIcon" onclick="showBalloonsGame()"><i class="fas fa-arrow-left"></i></div>
+                    <div class="header">
+                        <h3 onclick="showLevelsPage()" class="active">Levels</h3>
+                        <h3 onclick="showInfoPage()" >Info</h3>
+                    </div>
+                    <div class="levelsInfo" style="display: flex;">
+                        <h1>Levels</h1>
+                        <div class="lvlBoxes">
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 1</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 2</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 3</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 4</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 5</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 6</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 7</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 8</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 9</div>
+                            <div class="lvlBox closed" onclick="checkIfLevelCompleted(this.innerText)">Level 10</div>
+                        </div>
+                        <p>4 levels Completed !</p>
+                        <div class="resume">
+                            <div>
+                                <span>Resume Level 7</span>
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userInfo" style="display: none;">
+                        <p>Name : <span class="userName">Tahir</span></p>
+                        <p>Levels Completed : <span class="cmpltdLvl">5</span></p>
+                        <p>Current Level : <span class="crntLvl">5</span></p>
+                        <p>Last Game Played : <span class="lastPlayed">11:33AM</span></p>
+                        <p>User Id : <span class="userId">hfgDYHUGHFtydfgfH</span></p>
+                        <div class="logout" onclick="logout()" ><i class="fas fa-arrow-left"></i> Logout</div>
+                        <div class="rst" onclick="restoreSettings()">Reset your Game</div>
+                    </div>
+                </div>
+                <div class="balloonsContainer">
+                    <h1 class="wlcome"  onclick="showBalloonsInfo(); showInfoPage();">Welcome </h1>
+                    <h1 class="lives">
+                        <span><i class="fas fa-heart hrt"></i></span>
+                        <span><i class="fas fa-heart hrt"></i></span>
+                        <span><i class="fas fa-heart-broken hrt"></i></span>
+                    </h1>
+                    <div><h2 class="lvl" onclick="showBalloonsInfo(); showLevelsPage();">Level 1</h2></div>
+                    <h1 class="popClrBln" ></h1>
+                    <div class="mnBalloons">
+                        <!-- <div class="balloon black" id="black" onmouseover="blns(this.id , event)"><span></span></div>
+                        <div class="balloon blue" id="blue" onmouseover="blns(this.id , event)"><span></span></div>
+                        <div class="balloon red"  id="red" onmouseover="blns(this.id , event)"><span></span></div>
+                        <div class="balloon yellow" id="yellow" onmouseover="blns(this.id , event)"><span></span></div>
+                        <div class="balloon green" id="green" onmouseover="blns(this.id , event)"><span></span></div> -->
+                    </div>
+                    <div class="ntHover" style="display: none;"></div>
+                    <div class="gamePopUp" style="display: none; text-align: center;">
+                        <div class="gameOver">
+                            <h2>Game Over </h2>
+                            <div class="btn gmPopBtn" onclick="playAgain()">Try again</div>
+                        </div>
+                        <div class="gameWin">
+                            <h2>Congrats , You Win !</h2>
+                            <div class="btn gmPopBtn" onclick="changeLevel()">Next Level</div>
+                        </div>
+                    </div>
+                    <div class="blnLdr">
+                        <div class="lds-ripple"><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<div class="animationContainer" style="display: none;">
+    <div class="txt">Hi,</div>
+    <div class="txt">This Game ,</div>
+    <div class="txt">Just For you ,</div>
+    <div class="txt">Yess !</div>
+    <div class="txt">For you <span class="userNameAnimation">dear</span> !</div>
+</div>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script defer src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+.container{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    min-height: 100vh;
+}
+.inputForm {
+    width: 340px;
+    min-height: 200px;
+    text-align: center;
+    color: #ffffff96;
+    box-shadow: 0 0 15px #000000c9;
+    border-radius: 10px;
+}
+.inputForm h2 {
+    margin-top: 22px;
+}
+.inputForm .errMsg {
+    color: rgb(255 26 26);
+    margin: 8px 0;
+}
+.formDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.formDiv input {
+    width: 84%;
+    margin: 10px 0px;
+    font-size: 18px;
+    padding: 11px 10px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 0 0 6px #000000cc;
+    color: #c7c5c5;
+}
+.btn {
+    padding: 6px 7px;
+    box-shadow: 0 0 6px #000000b3;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 13px;
+    padding: 9px 12px;
+    font-weight: 600;
+}
+.formDiv .acntTxt{
+    margin: 18px 0;
+}
+.formDiv .acntTxt:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.mnPage {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gameContainer {
+    width: 592;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.gameContainer .lvl {
+    margin-bottom: 5px;
+    border-bottom: 2px solid;
+    cursor: pointer;
+    font-size: 19px;
+    color: #b0ff04;
+}
+h1.popClrBln {
+    font-size: 26px;
+    margin: 10px;
+}
+.balloonsContainer, .balloonsInfo {
+    background-color: #678386;
+    width: 592px;
+    height: 405px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    animation: open .5s;
+}
+@keyframes open {
+    0%{
+        transform: scale(1.1);
+        opacity: .1;
+    }100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.balloonsContainer h1.wlcome {
+    position: absolute;
+    left: 13px;
+    font-size: 24px;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.balloonsInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.backIcon {
+    position: absolute;
+    left: 17px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 5;
+}
+.header {
+    position: absolute;
+    top: 16px;
+    text-align: center;
+    width: 100%;
+}
+.header h3 {
+    display: inline-block;
+    padding: 4px;
+    color: yellow;
+    margin: 0px 6px;
+    opacity: .5;
+    cursor: pointer;
+    transition: .2s;
+}
+.active {
+    border-bottom: solid #ff9306;
+    transform: scale(1.05);
+    opacity: 1 !important;
+}
+.levelsInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 76%;
+}
+.lvlBoxes {
+    width: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 3px;
+}
+.lvlBox {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    background-color: #0000004a;
+    border-radius: 5px;
+    color: #ffffffd6;
+    cursor: pointer;
+}
+.balloonsInfo p {
+    color: #caff5f;
+    font-size: 20px;
+}
+.resume {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background: #001080;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.resume div {
+    margin: 7px;
+}
+.resume span{
+    margin-right: 3px;
+}
+.userInfo {
+    width: 90%;
+}
+.userInfo p {
+    color: rgb(255 255 255);
+    line-height: 36px;
+    text-shadow: 0 0 5px #00000069;
+    font-weight: 600;
+}
+.userInfo p span {
+    color: rgb(10 255 215);
+    font-weight: 400;
+    font-size: 19px;
+}
+.logout {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background: green;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 600;
+}
+.rst {
+    position: absolute;
+    bottom: 21px;
+    left: 45px;
+    text-decoration: underline;
+    font-size: 18px;
+    cursor: pointer;
+}
+.levelsInfo , .userInfo {
+    animation: open;
+}
+.open {
+    background-color: #00f1ff85 !important;
+    box-shadow: 0 0 8px #0000004f;
+}
+.closed{
+    background-color: #0000004b !important;
+    opacity: .6;
+}
+.toPlay{
+    background-color: #00000088 !important;
+    box-shadow: 0 0 8px #0000004f;
+}
+.mnBalloons{
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+.gamePopUp , .ntHover , .blnLdr{
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.ntHover{
+    background-color: transparent;
+}
+.gameWin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+    justify-content: space-evenly;
+}
+.gmPopBtn {
+    background-color: green;
+}
+.blnLdr{
+    background-color: #678386;  
+}
+.balloon {
+    width: 60px;
+    height: 60px;
+    background-color: #333333;
+    border-radius: 50%;
+    margin: 7px;
+    box-shadow: 0 0 7px #00000021;
+    display: inline-block;
+    position: relative;
+    /* animation: right 1s  infinite; */
+    border-radius: 47% 53% 49% 51% / 44% 42% 58% 56% ;
+    opacity: .8;
+    
+}
+.left{
+    animation: left 1s infinite;
+    animation-delay: -.2s;
+}
+@keyframes left {
+    0%{
+        left: 0px;
+    }50%{
+        left: 5px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+.right{
+    animation: right 1s infinite;
+    animation-delay: -.8s;
+}
+@keyframes right {
+    0%{
+        right: 0px;
+    }50%{
+        right: 5px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+.top{
+    animation: top 1s infinite;
+    animation-delay: -1.2s;
+}
+@keyframes top {
+    0%{
+        top: 0px;
+        left: 0px;
+    }25%{
+        top: 5px;
+    }75%{
+        left: 5px;
+    }
+    100%{
+        top: 0px;
+        left: 0px;
+    }
+}
+.bottom{
+    animation: bottom  1s infinite;
+    animation-delay: -.2s ;
+}
+@keyframes bottom {
+    0%{
+        bottom: 0px;
+    }50%{
+        bottom: 5px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+/* Hard Animations */
+.leftHard{
+    animation: left .8s infinite;
+    animation-delay: -.2s;
+}
+@keyframes leftHard {
+    0%{
+        left: 0px;
+    }50%{
+        left: 8px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+.rightHard{
+    animation: right .8s infinite;
+    animation-delay: -.8s;
+}
+@keyframes rightHard {
+    0%{
+        right: 0px;
+    }50%{
+        right: 5px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+.topHard{
+    animation: top .8s infinite;
+    animation-delay: -1.2s;
+}
+@keyframes topHard {
+    0%{
+        top: 0px;
+        left: 0px;
+    }25%{
+        top: 8px;
+    }75%{
+        left: 8px;
+    }
+    100%{
+        top: 0px;
+        left: 0px;
+    }
+}
+.bottomHard{
+    animation: bottom  .8s infinite;
+    animation-delay: -.5s;
+}
+@keyframes bottomHard {
+    0%{
+        bottom: 0px;
+    }50%{
+        bottom: 8px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+.balloon span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 20px;
+    width: 53px;
+}
+.poppedBalloon{
+    box-shadow: none;
+    background-color: transparent !important;
+}
+.lives {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    text-shadow: 0 0 5px black;
+    color: #ff0000;
+}
+.fa-heart-broken {
+    color: #a0a0a0;
+    opacity: .5;
+}
+
+/* Balloons color */
+.black{
+    background-color: rgb(39, 39, 39);
+}
+.blue{
+    background-color: rgb(0, 60, 255);
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: rgb(243, 239, 14);
+}
+.green{
+    background-color: rgb(52, 243, 14);
+}
+
+
+/* For Loader */
+.loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(58, 58, 58);
+}
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #21ff94;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #42a6ff transparent transparent transparent;
+}
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Second Loader */
+  .lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+/* Background animations */
+.animationContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.txt {
+    font-size: 26px;
+    opacity: 0;
+    position: absolute;
+}
+.txt:nth-child(1){
+    animation: opacityTxt 3s;
+}
+.txt:nth-child(2){
+    animation: opacityTxt 3s;
+    animation-delay: 3s;
+}
+.txt:nth-child(3){
+    animation: opacityTxt 3s;
+    animation-delay: 6s;
+}
+.txt:nth-child(4){
+    animation: opacityTxt 3s;
+    animation-delay: 9s;
+}
+.txt:nth-child(5){
+    animation: opacityTxt 4.3s;
+    animation-delay: 12s;
+}
+@keyframes opacityTxt {
+    0%{
+        opacity: 0;
+    }50%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
