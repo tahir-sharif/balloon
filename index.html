@@ -18,22 +18,24 @@
             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
         
-        <div class="inputForm" style="display: none;">
-            <h2 class="formHeding">Login</h2>
-            <div class="errMsg">&nbsp;</div>
-            <div class="loginForm formDiv">
-                <input type="email" class="email" placeholder="Email address" spellcheck="false" >
-                <input type="password" class="password" placeholder="Password" spellcheck="false" >
-                <div class="btn loginBtn" onclick="login()">Login</div>
-                <div class="acntTxt" onclick="showRegForm()">Don't have an account</div>
-            </div>
-            <div class="regForm formDiv" style="display: none;">
-                <!-- <h2>Registor</h2> -->
-                <input type="text" class="name" placeholder="Your name" spellcheck="false" >
-                <input type="email" class="regEmail" placeholder="Email address" spellcheck="false" >
-                <input type="password" class="regPass" placeholder="Password" spellcheck="false" >
-                <div class="btn signupBtn" onclick="signup()">Signup</div>
-                <div class="acntTxt" onclick="showLoginForm()">Already have an account</div>
+        <div class="formDivs" style="display: none;">
+        <div class="inputForm">
+                <h2 class="formHeding">Login</h2>
+                <div class="errMsg">&nbsp;</div>
+                <div class="loginForm formDiv">
+                    <input type="email" class="email" placeholder="Email address" spellcheck="false" >
+                    <input type="password" class="password" placeholder="Password" spellcheck="false" >
+                    <div class="btn loginBtn" onclick="login()">Login</div>
+                    <div class="acntTxt" onclick="showRegForm()">Don't have an account</div>
+                </div>
+                <div class="regForm formDiv" style="display: none;">
+                    <!-- <h2>Registor</h2> -->
+                    <input type="text" class="name" placeholder="Your name" spellcheck="false" >
+                    <input type="email" class="regEmail" placeholder="Email address" spellcheck="false" >
+                    <input type="password" class="regPass" placeholder="Password" spellcheck="false" >
+                    <div class="btn signupBtn" onclick="signup()">Signup</div>
+                    <div class="acntTxt" onclick="showLoginForm()">Already have an account</div>
+                </div>
             </div>
         </div>
 

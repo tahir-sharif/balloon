@@ -28,6 +28,12 @@ body{
     color: rgb(255 26 26);
     margin: 8px 0;
 }
+.formDivs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 .formDiv{
     display: flex;
     align-items: center;

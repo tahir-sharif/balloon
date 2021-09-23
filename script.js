@@ -55,7 +55,7 @@ if(uName.value !='' && signUpEmail.value !='' && signUpPass.value !=''){
     auth.createUserWithEmailAndPassword(signUpEmail , signUpPass)
     .then(()=>{
         firestore.collection('usersData').doc(auth.currentUser.uid).set({
-            name : capitalFirstLetter(uName),
+            name : capitalFirstLetter(uName.value),
             level : 1,
             levelcleared : 0,
             lastGamePlayed : new Date(),
@@ -174,10 +174,10 @@ function showLoginForm(){
 }
 
 // Toggle between auth & main page
-var inputForm = document.querySelector('.inputForm')
+var inputForm = document.querySelector('.formDivs')
 var mnPage = document.querySelector('.mnPage')
 function showAuthPage() {
-    inputForm.style.display = 'block'
+    inputForm.style.display = 'flex'
     mnPage.style.display = 'none'
 }
 function showMainPage() {
